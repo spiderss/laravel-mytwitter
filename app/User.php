@@ -29,7 +29,7 @@ class User extends Authenticatable
     //发布的文章
     public function posts()
     {
-        return $this->hasMany(Post::class);
+        return $this->hasMany(Post::class,'user_id', 'id');
     }
     //关注者
     public function following()

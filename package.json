@@ -21,6 +21,6 @@
         "watch": "^0.16.0"
     },
     "dependencies": {
-        //"vue-image-crop-upload": "^2.3.3"
+        "bower": "^1.8.4"
     }
 }
