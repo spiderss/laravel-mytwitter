@@ -25,3 +25,15 @@ Route::get('posts', 'twitter\PostController@index')->name('posts.index');
 Route::get('users/{user}/follow', 'users\UserController@follow')->name('user.follow');
 Route::get('users/{user}/unfollow', 'users\UserController@unfollow')->name('user.unfollow');
 Route::get('users/{user}', 'users\UserController@show')->name('user.show');
+
+
+Route::get('/web', 'Web\AppController@getApp')
+    ->middleware('auth');
+Route::get('/web/login', 'Web\AppController@getLogin' )
+    ->name('login')
+    ->middleware('guest');
+
+Route::get( '/auth/{social}', 'Web\AuthenticationController@getSocialRedirect' )
+    ->middleware('guest');
+Route::get( '/auth/{social}/callback', 'Web\AuthenticationController@getSocialCallback' )
+    ->middleware('guest');
